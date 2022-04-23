@@ -1,0 +1,51 @@
+[
+    {
+        "id": "6263d660bfc57a02f3f35e12",
+        "name": "Shooting",
+        "text": "Learn the Sport and Catch the Action, Position yourself. Think about composition. Maintain Shutter speed.",
+        "price": "$2,216.18",
+        "img": "https://i.ibb.co/0fThTxD/service-1.jpg"
+    },
+    {
+        "id": "6263d660468cc5735b361944",
+        "name": "Videos",
+        "text": "Vantage Point.Capturing Magic Moments Is The Objective.Making The Best Of The Lighting",
+        "price": "$1,142.21",
+        "img": "https://i.ibb.co/vvp3Zzd/service-2.jpg"
+    },
+    {
+        "id": "6263d66052c3b025ed3d1aa5",
+        "name": "Editing",
+        "text": "Crop Photos to Remove Distractions, Enhance Highlights with the Glow Tool,Add a Vignette Effect",
+        "price": "$2,963.97",
+        "img": "https://i.ibb.co/SXNWLrS/service-3.jpg"
+    },
+    {
+        "id": "6263d660ee113ab793fb1f02",
+        "name": "Printing",
+        "text": "Colour Management.Choosing the Right Paper.Sizing Your Photos.Provide suitable place for print.",
+        "price": "$1,787.70",
+        "img": "https://i.ibb.co/SXNWLrS/service-3.jpg"
+    },
+    {
+        "id": "6263d66081821bb0d8199278",
+        "name": "Advertising",
+        "text": "For Advertise Social Media as a Marketing Tool, Google Business List, Ad Platform..",
+        "price": "$1,551.60",
+        "img": "https://i.ibb.co/SXNWLrS/service-3.jpg"
+    },
+    {
+        "id": "6263d66050515c286c77cf77",
+        "name": "Framing",
+        "text": "Select Photo or Artwork. Photo, frame, and mat. Purchase Mat and Frame. When looking for a mat and frame, try arts and crafts stores.",
+        "price": "$3,796.76",
+        "img": "https://i.ibb.co/SXNWLrS/service-3.jpg"
+    },
+    {
+        "id": "6263d660ddd5d0cdc8256e65",
+        "name": "Colouring",
+        "text": "Choose perfect colors, Balance colors.Set colors.",
+        "price": "$1,789.53",
+        "img": "https://i.ibb.co/SXNWLrS/service-3.jpg"
+    }
+]
