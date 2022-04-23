@@ -1,18 +1,40 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import SocialLogIn from '../SocialLogIn/SocialLogIn';
 
 const Login = () => {
     // get the value of email and password using Ref
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
-    // event handler for form submission
+    const navigate = useNavigate();
+
+
+    // react firebase hooks
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    // confirming log in
+    if (user) {
+        navigate('/home');
+    }
+
+    // event handler for submitting form 
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         // console.log(email, password);
+
+        // sign in option
+        signInWithEmailAndPassword(email, password);
     }
 
 
@@ -29,16 +51,16 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary w-50 mx-auto mb-3 d-block" type="submit">
                     Login
                 </Button>
             </Form>
 
             {/* --------- Toggle area ------------ */}
-            <p className='text-decoration-none pe-auto d-block my-3'>New To SPHOTOGRAPHY? <Link to='/register'>Please Register</Link></p>
+            <p >New To SPHOTOGRAPHY? <Link to='/register' className=' pe-auto my-3 text-decoration-none fs-6 fw-bold text-danger'>Please Register</Link></p>
+
+            {/* ------- Social Log In---------- */}
+            <SocialLogIn></SocialLogIn>
         </div>
     );
 };

@@ -1,26 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Register.css';
+import auth from '../../../firebase.init';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import SocialLogIn from '../SocialLogIn/SocialLogIn';
 
 const Register = () => {
+    const [agree, setAgree] = useState();
+
+    // firebase hooks
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+
+
+    // event handler for  submit register
+    const handleRegister = event => {
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+
+        // creating user for first time
+        createUserWithEmailAndPassword(email, password);
+    }
+
     return (
-        <div>
+        <div className='register-form'>
             <h2>Please register</h2>
-            <form>
+            <form onSubmit={handleRegister}>
                 <input type="text" name="name" id="" placeholder='Enter your name' />
-                <input type="email" name="email" id="" placeholder='Enter your email' />
-                <input type="password" name="password" id="" placeholder='Enter your password' />
+                <input type="email" name="email" id="" placeholder='Enter your email' required />
+                <input type="password" name="password" id="" placeholder='Enter your password' required />
 
                 {/* ---- checkbox ------ */}
-                <input type="checkbox" name="check" id="" />
+                <input onClick={() => setAgree(!agree)} type="checkbox" name="check" id="" />
                 <label htmlFor="check">Accept SPHOTOGRAPHY terms and Conditions</label>
 
-                <input className='btn btn-link text-decoration-none' type="submit" value="Register" />
+                <input disabled={!agree} className='btn btn-primary w-50 mx-auto text-decoration-none my-3' type="submit" value="Register" />
 
 
             </form>
 
             {/* ---- toggle ----- */}
-            <p>Already Have an account? <Link to='/login' className='text-primary text-decoration-none d-block pe-auto'><span>Login</span></Link></p>
+            <p>Already Have an account? <Link to='/login' className='text-success text-decoration-none pe-auto fs-6 fw-bold'><span>Login</span></Link></p>
+
+            {/* ---- social log in ----- */}
+            <SocialLogIn></SocialLogIn>
         </div>
     );
 };
