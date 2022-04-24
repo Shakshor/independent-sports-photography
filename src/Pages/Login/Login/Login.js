@@ -1,9 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogIn from '../SocialLogIn/SocialLogIn';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     // get the value of email and password using Ref
@@ -27,6 +31,11 @@ const Login = () => {
         auth
     );
 
+
+    // Loading Problem solving
+    if (loading) {
+        return <Loading></Loading>;
+    }
 
 
 
@@ -59,8 +68,14 @@ const Login = () => {
     // event handler reset password
     const resetPassword = async () => {
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-        alert('sent email');
+        // checking email
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('sent email');
+        }
+        else {
+            toast('Please enter your email address');
+        }
     }
 
 
@@ -94,6 +109,9 @@ const Login = () => {
 
             {/* ------- Social Log In---------- */}
             <SocialLogIn></SocialLogIn>
+
+            {/* ------- toast for reset password */}
+            <ToastContainer />
         </div>
     );
 };
