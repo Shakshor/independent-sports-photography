@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogIn from '../SocialLogIn/SocialLogIn';
 
@@ -9,8 +9,11 @@ const Login = () => {
     // get the value of email and password using Ref
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
     const navigate = useNavigate();
+    const location = useLocation();
+
+    let errorElement;
+    const from = location.state?.from?.pathname || '/';
 
 
     // react firebase hooks
@@ -20,11 +23,27 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
+
+
+
 
     // confirming log in
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
+
+    // error message
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error.message}</p>
+    }
+
+
+
+
+
 
     // event handler for submitting form 
     const handleSubmit = event => {
@@ -36,6 +55,14 @@ const Login = () => {
         // sign in option
         signInWithEmailAndPassword(email, password);
     }
+
+    // event handler reset password
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('sent email');
+    }
+
 
 
     return (
@@ -56,8 +83,14 @@ const Login = () => {
                 </Button>
             </Form>
 
+            {/*--------- error showing ---------  */}
+            {errorElement}
+
             {/* --------- Toggle area ------------ */}
             <p >New To SPHOTOGRAPHY? <Link to='/register' className=' pe-auto my-3 text-decoration-none fs-6 fw-bold text-danger'>Please Register</Link></p>
+
+            {/* -------  */}
+            <p>Forget Password?<button className='btn btn-link text-primary text-decoration-none pe-auto fw-bold' onClick={resetPassword} >Reset Password</button></p>
 
             {/* ------- Social Log In---------- */}
             <SocialLogIn></SocialLogIn>

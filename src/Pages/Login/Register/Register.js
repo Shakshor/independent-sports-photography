@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogIn from '../SocialLogIn/SocialLogIn';
 
 const Register = () => {
-    const [agree, setAgree] = useState();
+    const [agree, setAgree] = useState(false);
+    const navigate = useNavigate();
 
     // firebase hooks
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
 
+
+    if (user) {
+        navigate('/home');
+    }
 
     // event handler for  submit register
     const handleRegister = event => {
@@ -33,7 +38,7 @@ const Register = () => {
 
                 {/* ---- checkbox ------ */}
                 <input onClick={() => setAgree(!agree)} type="checkbox" name="check" id="" />
-                <label htmlFor="check">Accept SPHOTOGRAPHY terms and Conditions</label>
+                <label className={`ps-2 ${agree ? 'text-primary' : 'text-danger'}`} htmlFor="check">Accept <strong>SPHOTOGRAPHY</strong> terms and Conditions</label>
 
                 <input disabled={!agree} className='btn btn-primary w-50 mx-auto text-decoration-none my-3' type="submit" value="Register" />
 
