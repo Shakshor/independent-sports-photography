@@ -1,0 +1,24 @@
+.footer-area {
+    height: 25vh;
+    background-color: #24262b;
+    color: white;
+    margin: 0 auto;
+    padding: 30px;
+    color: #bbbbbb;
+}
+
+.footer-item {
+    text-align: left;
+}
+
+.footer-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-item ul li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #bbbbbb;
+
+}
