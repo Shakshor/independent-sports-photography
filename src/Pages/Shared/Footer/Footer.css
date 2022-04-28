@@ -2,7 +2,6 @@
     height: 25vh;
     background-color: #24262b;
     color: white;
-    margin: 0 auto;
     padding: 30px;
     color: #bbbbbb;
 }
@@ -17,8 +16,14 @@
 }
 
 .footer-item ul li a {
+    display: block;
     text-decoration: none;
     text-transform: capitalize;
     color: #bbbbbb;
+    transition: all 0.3s ease;
+}
 
+.footer-item ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
 }

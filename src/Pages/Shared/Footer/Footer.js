@@ -7,8 +7,8 @@ import { GoLocation } from 'react-icons/go';
 
 const Footer = () => {
     return (
-        <div className='container my-5'>
-            <div className="row   footer-area">
+        <div className='container-fluid  mt-5'>
+            <div className="row footer-area">
                 <div className="col-md-4 footer-item">
                     <h4 className='text-uppercase 
                     mb-2 text-warning'>Help</h4>
@@ -20,21 +20,21 @@ const Footer = () => {
                 <div className="col-md-4 footer-item">
                     <h4 className='text-uppercase mb-2 text-warning'>Follow </h4>
                     <ul>
-                        <li><a href='#'><FaFacebook /></a></li>
-                        <li><a href='#'><FaEnvelope /></a></li>
+                        <li><a target='_blank' href='https://www.facebook.com/'><FaFacebook /></a></li>
+                        <li><a target='_blank' href='https://www.shakshor@gmail.com'><FaEnvelope /></a></li>
                     </ul>
                 </div>
                 <div className="col-md-4 footer-item">
                     <h4 className='text-uppercase mb-2 text-warning'>Contact</h4>
                     <ul>
-                        <li><FaPhone></FaPhone>01580293626</li>
-                        <li><GoLocation></GoLocation>Uttar Baluchor.Sylhet</li>
+                        <li><FaPhone style={{ 'marginRight': '10px' }}></FaPhone>01580293626</li>
+                        <li><GoLocation style={{ 'marginRight': '10px' }}></GoLocation>Uttar Baluchor.Sylhet</li>
                         <li></li>
                     </ul>
                 </div>
+                <hr />
                 <p className='text-center'><small>SPHOTOGRAPHY &copy;{new Date().getFullYear()} copyrights preserved..</small></p>
             </div>
-
 
         </div>
     );
