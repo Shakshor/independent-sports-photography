@@ -5,3 +5,30 @@
 .banner-area img {
     height: 100vh;
 }
+
+.carousel-caption h3 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: blanchedalmond;
+    padding-bottom: 20px;
+}
+
+.carousel-caption p {
+    font-size: 17px;
+}
+
+
+/* --------- Media Queries ----------- */
+/* -------- Mobile Devices ----------- */
+@media only screen and (max-width:576px) {
+    .carousel-caption h3 {
+        font-size: 30px;
+        padding-bottom: 0px;
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+        margin: 0;
+    }
+}

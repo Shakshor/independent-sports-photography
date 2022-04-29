@@ -4,16 +4,15 @@
 }
 
 /* ----- nav item ------- */
-.navbar-dark .navbar-nav .nav-link {
-    color: white;
+a {
     margin: 5px 20px;
     font-size: 19px;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: black;
+    color: black !important;
 }
 
-nav .nav-item:hover {
+a:hover {
     color: black;
 }

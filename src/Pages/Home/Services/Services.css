@@ -5,3 +5,13 @@
     text-overflow: ellipsis;
     margin-bottom: 40px;
 }
+
+
+/* --------- Media Queries ----------- */
+/* -------- Mobile Devices ----------- */
+@media only screen and (max-width:576px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+}

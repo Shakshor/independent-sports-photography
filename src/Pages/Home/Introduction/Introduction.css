@@ -24,3 +24,28 @@
     width: 80%;
     padding-left: 10px;
 }
+
+
+/* --------- Media Queries ----------- */
+/* -------- Mobile Devices ----------- */
+
+@media only screen and (max-width:576px) {
+
+    /* --- Introduction area ------- */
+    .introduction-area {
+        flex-direction: column-reverse;
+    }
+
+    .introduction-pic {
+        width: 80%;
+    }
+
+    .introduction-pic img {
+        margin-bottom: 20px;
+    }
+
+    .introduction-details {
+        width: 80%;
+        text-align: left;
+    }
+}

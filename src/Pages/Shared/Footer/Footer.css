@@ -1,13 +1,13 @@
 footer {
     background-color: #24262b;
-    height: 25vh;
+    height: 26vh;
     padding: 30px;
     color: #bbbbbb;
     margin-top: auto;
 }
 
 .footer-item {
-    text-align: left;
+    text-align: center;
 }
 
 .footer-item ul {
@@ -27,4 +27,24 @@ footer {
 .footer-item ul li a:hover {
     color: #ffffff;
     padding-left: 8px;
+}
+
+
+/* --------- Media Queries ----------- */
+/* -------- Mobile Devices ----------- */
+@media only screen and (max-width:576px) {
+    footer {
+        height: 58vh;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .footer-item {
+        text-align: center;
+    }
+
+    footer p {
+        margin-left: 40px;
+    }
+
 }
