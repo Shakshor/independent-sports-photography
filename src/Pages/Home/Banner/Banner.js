@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import banner3 from '../../../images/banner/soccer3.avif';
-import banner2 from '../../../images/banner/sprint.jpg';
-import banner1 from '../../../images/banner/swimmer.jpg';
+import banner2 from '../../../images/banner/sprint-min.jpg';
+import banner1 from '../../../images/banner/swimmer-min.jpg';
 import './Banner.css';
 
 const Banner = () => {

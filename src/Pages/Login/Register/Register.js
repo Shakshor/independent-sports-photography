@@ -4,7 +4,6 @@ import './Register.css';
 import auth from '../../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import SocialLogIn from '../SocialLogIn/SocialLogIn';
-import { sendEmailVerification } from 'firebase/auth';
 import Loading from '../../Shared/Loading/Loading';
 
 const Register = () => {
