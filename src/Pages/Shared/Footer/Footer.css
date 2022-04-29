@@ -1,9 +1,9 @@
-.footer-area {
-    height: 25vh;
+footer {
     background-color: #24262b;
-    color: white;
+    height: 25vh;
     padding: 30px;
     color: #bbbbbb;
+    margin-top: auto;
 }
 
 .footer-item {
@@ -21,6 +21,7 @@
     text-transform: capitalize;
     color: #bbbbbb;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .footer-item ul li a:hover {

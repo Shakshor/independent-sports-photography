@@ -1,0 +1,27 @@
+/* ----- import google fonts ------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Ubuntu&display=swap');
+
+
+.self-area {
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.self-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.self-section .area-1 {
+    width: 60%;
+    padding: 0;
+}
+
+.area-1 img {
+    padding-left: 20px;
+    padding-bottom: 20px;
+}

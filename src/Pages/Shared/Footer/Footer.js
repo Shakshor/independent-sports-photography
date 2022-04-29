@@ -7,8 +7,8 @@ import { GoLocation } from 'react-icons/go';
 
 const Footer = () => {
     return (
-        <div className='container-fluid  mt-5'>
-            <div className="row footer-area">
+        <footer className='container-fluid'>
+            <div className="row">
                 <div className="col-md-4 footer-item">
                     <h4 className='text-uppercase 
                     mb-2 text-warning'>Help</h4>
@@ -33,10 +33,13 @@ const Footer = () => {
                     </ul>
                 </div>
                 <hr />
+
+            </div>
+            <div>
                 <p className='text-center'><small>SPHOTOGRAPHY &copy;{new Date().getFullYear()} copyrights preserved..</small></p>
             </div>
 
-        </div>
+        </footer>
     );
 };
 

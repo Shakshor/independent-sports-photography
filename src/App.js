@@ -13,7 +13,8 @@ import About from './Pages/About/About';
 
 function App() {
   return (
-    <div>
+    <div className='page-container'>
+
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -30,6 +31,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+
     </div>
   );
 }

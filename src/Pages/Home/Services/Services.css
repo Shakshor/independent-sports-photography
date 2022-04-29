@@ -2,6 +2,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    /* text-align: justify; */
     text-overflow: ellipsis;
+    margin-bottom: 40px;
 }
